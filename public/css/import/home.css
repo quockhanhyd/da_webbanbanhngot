@@ -1,5 +1,5 @@
 /*MAIN CONTENT*/
-#main-content-wp{ background: #f7f7f7; padding-top: 25px; padding-bottom: 75px;}
+#main-content-wp{ background: #f8f2e8; padding-bottom: 75px;}
 .main-content{ width: 75%; margin-left: 2%; }
 .sidebar{ width: 23%;}
 #slider-wp .item img{ width: 100%!important}
@@ -9,8 +9,8 @@
     display: block;
     font-size: 20px;
     text-transform: uppercase;
-    background: #969696;
-    color: #fff;
+    background: #3b171be3;
+    color: #c0c906;
     padding: 15px;
     border-bottom: 1px solid #dadada;
 }
@@ -57,7 +57,7 @@
 #selling-wp .section-detail .list-item .info .price .new{
     display: inline-block;
     font-family: 'Kanit';
-    color: #4a1d22e6;
+    color: #3b171be3;
     margin-right: 5px;
 }
 #selling-wp .section-detail .list-item .info .price .old{
@@ -124,7 +124,7 @@
 #feature-product-wp .list-item li .price .new, #list-product-wp .list-item li .price .new, #same-category-wp .list-item li .price .new{
     display: inline-block;
     font-family: 'Kanit';
-    color: #4a1d22e6;
+    color: #3b171be3;
     font-size: 15px;
     font-weight: normal;
     margin-right: 5px;
@@ -146,10 +146,11 @@
     color: #333;
 }
 #feature-product-wp .list-item li .action .buy-now, #list-product-wp .list-item li .action .buy-now, #same-category-wp .list-item li .action .buy-now{
-    color: #da1818;
-    border: 1px solid #da1818;
+    border: 1px solid #c0c906;
+    background: #c0c906;
+    color: #fff;
 }
-#feature-product-wp .list-item li .action .buy-now:hover, #list-product-wp .list-item li .action .buy-now:hover, #same-category-wp .list-item li .action .buy-now:hover{ background: #da1818; color: #fff;}
+#feature-product-wp .list-item li .action .buy-now:hover, #list-product-wp .list-item li .action .buy-now:hover, #same-category-wp .list-item li .action .buy-now:hover{ background: #c3c863; color: #fff;}
 #feature-product-wp .list-item li .action .add-cart:hover, #list-product-wp .list-item li .action .add-cart:hover, #same-category-wp .list-item li .action .add-cart:hover{ background: #333; color: #fff;}
 #list-product-wp .section-detail .list-item li{ 
     float: left; 

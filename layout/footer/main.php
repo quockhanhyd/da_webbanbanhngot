@@ -59,7 +59,7 @@
     </div>
     <div id="foot-bot">
         <div class="wp-inner">
-            <p id="copyright">© Bản quyền thuộc về Nội thất Gia Khánh</p>
+            <p id="copyright">© Bản quyền thuộc về GARDENISTA BAKERY</p>
         </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 /*HEADER*/
-#head-top{ background: #4a1d22e6;}
+#head-top{ background: #3b171be3;}
 #head-top #main-menu li{ float: left;}
 #head-top #payment-link{
     position: relative;
@@ -20,7 +20,7 @@
     padding: 10px 15px;
 }
 #head-top #main-menu li:last-child a{ padding-right: 0!important;}
-#head-body{ background: #4a1d22e6;}
+#head-body{ background: #3b171be3;}
 #head-body #logo{
     display: block;
     font-size: 30px;
@@ -76,7 +76,7 @@
     content: '';
     width: 1px;
     height: 50%;
-    background: #da263c;
+    background: #9b7076;
     top: 50%;
     right: 0;
     transform: translateY(-50%);
@@ -148,7 +148,7 @@
 #cart-wp .list-cart .thumb{ width: 25%;}
 #cart-wp .list-cart .info{ width: 75%; padding-left: 15px;}
 #cart-wp #dropdown .desc{ margin-bottom: 15px; color: #333;}
-#cart-wp #dropdown .desc span{ color: #4a1d22e6; font-family: 'Kanit';}
+#cart-wp #dropdown .desc span{ color: #3b171be3; font-family: 'Kanit';}
 #cart-wp #dropdown .list-cart .info .product-name{
     display: block;
     font-size: 13px;
@@ -182,7 +182,7 @@
     font-size: 12px;
 }
 #cart-wp #dropdown .action-cart a.view-cart{ background: #ddd; color: #333;}
-#cart-wp #dropdown .action-cart a.checkout{ background: #4a1d22e6; color: #fff;}
+#cart-wp #dropdown .action-cart a.checkout{ background: #3b171be3; color: #fff;}
 #cart-wp #dropdown .action-cart a.view-cart:hover{ background: #ccc;}
 #cart-wp #dropdown .action-cart a.checkout:hover{ background: #af1427;}
 

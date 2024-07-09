@@ -2,8 +2,8 @@
     get_header() ;
 ?>
     <div id="main-content-wp" class="home-page clearfix">
-        <div class="wp-inner" style="margin-bottom: 12px;">
-            <div class="section" id="slider-wp">
+        <!-- <div class="wp-inner" style="margin-bottom: 12px;"> -->
+            <div class="section" id="slider-wp" style="margin-bottom: 18px;">
                 <div class="section-detail">
                     <?php
                         $slider = get_slider() ;
@@ -21,7 +21,7 @@
                     <?php }} ?>
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
         <div class="wp-inner">
             <div class="main-content fl-right">
                 <!-- <div class="section" id="slider-wp">
@@ -45,7 +45,7 @@
                 <?php 
                     if(!empty($list_support)){    
                 ?>
-                <div class="section" id="support-wp" >
+                <!-- <div class="section" id="support-wp" >
                     <div class="section-detail" id="support-wp" >
                         <ul class="list-item clearfix">
                             <?php foreach ($list_support as $item ){ 
@@ -60,14 +60,14 @@
                             <?php } ?>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                     <?php } ?>
                 <?php 
                     if(!empty($list_favorite)){
                 ?>
                  <div class="section" id="feature-product-wp">
                     <div class="section-head">
-                        <h3 class="section-title" style="text-align: center;font-weight: bold;font-size:26px;color: #242424c9;">Bánh nội bật 2024</h3>
+                        <h3 class="section-title" style="text-align: center;font-weight: bold;font-size:28px;color: #c0c906;">Bánh nổi bật 2024</h3>
                     </div>
                     <div class="section-detail">
                         <ul class="list-item">
@@ -103,7 +103,7 @@
                 ?>
                 <div class="section" id="list-product-wp">
                     <div class="section-head">
-                        <h3 class="section-title" style="text-align: center;font-weight: bold;font-size:26px;color: #242424c9;"><?php echo $v['title'] ; ?></h3>
+                        <h3 class="section-title" style="text-align: center;font-weight: bold;font-size:28px;color: #c0c906;"><?php echo $v['title'] ; ?></h3>
                     </div>
                     <div class="section-detail">
                         <?php if(!empty($v['data'])){ ?>

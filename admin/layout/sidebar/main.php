@@ -15,7 +15,7 @@
                 </li>
             </ul>
         </li>
-        <li class="nav-item"  <?php echo compare($level,3,"style='display:none' "); ?>>
+        <!-- <li class="nav-item"  <?php echo compare($level,3,"style='display:none' "); ?>>
             <a href="" title="" class="nav-link nav-toggle">
                 <span class="fa fa-map icon"></span>
                 <span class="title">Trang</span>
@@ -28,7 +28,7 @@
                     <a href="?mod=page&controller=index&action=index" title="Danh sách các trang" class="nav-link">Danh sách các trang</a>
                 </li>
             </ul>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a href="" title="" class="nav-link nav-toggle">
                 <span class="fa fa-pencil-square-o icon"></span>
@@ -122,14 +122,14 @@
                 <li class="nav-item">
                     <a href="?mod=theme&controller=slider&action=index" title="Danh sách slider " class="nav-link">Danh sách slider </a>
                 </li>
-                <div  <?php echo compare($level,array('2','3'),"style='display:none' "); ?> > 
+                <!-- <div  <?php echo compare($level,array('2','3'),"style='display:none' "); ?> > 
                     <li class="nav-item">
                         <a href="?mod=sytem&controller=support&action=add" title="Thêm mới" class="nav-link">Thêm thông tin hỗ trợ</a>
                     </li>
                     <li class="nav-item">
                         <a href="?mod=sytem&controller=support&action=index" title="Danh sách các trang" class="nav-link">Danh sách hỗ trợ</a>
                     </li>
-                </div>
+                </div> -->
             </ul>
         </li>
         <li <?php echo compare($level,array('2','3'),"style='display:none' "); ?> class="nav-item">

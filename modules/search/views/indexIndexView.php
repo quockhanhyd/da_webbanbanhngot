@@ -52,7 +52,7 @@
                         </a>
                     </div>
                     <div class="content">
-                        <a  href="<?php echo $item['path']['detail'] ; ?>" class="name">Sony Xperia XA Ultra</a>
+                        <a  href="<?php echo $item['path']['detail'] ; ?>" class="name"><?php echo $item['name'];?></a>
                         <div class="info clearfix">
                             <?php
                                             $new = empty($item['discount']) ? $item['price'] : $item['discount'] ;

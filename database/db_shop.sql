@@ -11,7 +11,7 @@
  Target Server Version : 80037
  File Encoding         : 65001
 
- Date: 06/07/2024 09:55:16
+ Date: 09/07/2024 20:23:06
 */
 
 SET NAMES utf8mb4;
@@ -37,7 +37,7 @@ CREATE TABLE `tbl_category`  (
   INDEX `modify_by`(`modify_by` ASC) USING BTREE,
   CONSTRAINT `tbl_category_ibfk_1` FOREIGN KEY (`modify_by`) REFERENCES `tbl_user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `tbl_category_ibfk_2` FOREIGN KEY (`create_by`) REFERENCES `tbl_user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_category
@@ -133,7 +133,7 @@ CREATE TABLE `tbl_filter`  (
   CONSTRAINT `tbl_filter_ibfk_1` FOREIGN KEY (`modify_by`) REFERENCES `tbl_user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `tbl_filter_ibfk_2` FOREIGN KEY (`create_by`) REFERENCES `tbl_user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `tbl_filter_ibfk_3` FOREIGN KEY (`cat_id`) REFERENCES `tbl_category` (`cat_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_filter
@@ -156,11 +156,26 @@ CREATE TABLE `tbl_history`  (
   `parent_id` int NOT NULL DEFAULT 0,
   `happen_at` int NOT NULL,
   PRIMARY KEY (`history_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 313 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_history
 -- ----------------------------
+INSERT INTO `tbl_history` VALUES (1, NULL, 'login', 1, 0, 1720236405);
+INSERT INTO `tbl_history` VALUES (2, NULL, 'login', 1, 0, 1720258284);
+INSERT INTO `tbl_history` VALUES (3, NULL, 'login', 1, 0, 1720503037);
+INSERT INTO `tbl_history` VALUES (4, 'Cập nhập thành công Menu : Bánh sinh nhật', 'edit', 1, 3, 1720503128);
+INSERT INTO `tbl_history` VALUES (5, 'Cập nhập thành công Menu : Bánh mì & bánh mặn', 'edit', 1, 3, 1720503152);
+INSERT INTO `tbl_history` VALUES (6, 'Cập nhập thành công Menu : Bánh mì & Bánh mặn', 'edit', 1, 3, 1720503169);
+INSERT INTO `tbl_history` VALUES (7, 'Cập nhập thành công Menu : COOKIES', 'edit', 1, 3, 1720503212);
+INSERT INTO `tbl_history` VALUES (8, 'Xóa thành công Menu : COOKIES.Tạo ngày 10/01/2018', 'drop', 1, 3, 1720503215);
+INSERT INTO `tbl_history` VALUES (9, 'Cập nhập thành công Menu : Cookies', 'edit', 1, 3, 1720503229);
+INSERT INTO `tbl_history` VALUES (10, 'Cập nhập thành công Menu : Minicakes', 'edit', 1, 3, 1720503256);
+INSERT INTO `tbl_history` VALUES (11, 'Cập nhập thành công Menu : Bánh mì', 'edit', 1, 3, 1720503290);
+INSERT INTO `tbl_history` VALUES (12, 'Thêm thành công Menu : Bánh mặn', 'add', 1, 3, 1720503368);
+INSERT INTO `tbl_history` VALUES (13, 'Xóa thành công Menu : Tin tức.Tạo ngày 10/01/2018', 'drop', 1, 3, 1720503402);
+INSERT INTO `tbl_history` VALUES (14, NULL, 'login', 1, 0, 1720528754);
+INSERT INTO `tbl_history` VALUES (15, 'Xóa thành công Menu : Điện thoại sam sung.Tạo ngày 04/03/2018', 'drop', 1, 14, 1720529010);
 
 -- ----------------------------
 -- Table structure for tbl_media
@@ -179,7 +194,7 @@ CREATE TABLE `tbl_media`  (
   PRIMARY KEY (`media_id`) USING BTREE,
   INDEX `id_connect`(`id_connect` ASC) USING BTREE,
   INDEX `create_by`(`create_by` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 328 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 329 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_media
@@ -235,7 +250,7 @@ CREATE TABLE `tbl_menu`  (
   INDEX `create_by`(`create_by` ASC) USING BTREE,
   CONSTRAINT `tbl_menu_ibfk_1` FOREIGN KEY (`modify_by`) REFERENCES `tbl_user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `tbl_menu_ibfk_2` FOREIGN KEY (`create_by`) REFERENCES `tbl_user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_menu
@@ -246,23 +261,21 @@ INSERT INTO `tbl_menu` VALUES (7, 'Chính sách bảo hành - đổi trả', 1, 
 INSERT INTO `tbl_menu` VALUES (8, 'Quy định - chính sách', 1, 2, 6, 1, 'where-does-it-come-from.html', 2, 3, 1513015664, 1513756996, 1, 1);
 INSERT INTO `tbl_menu` VALUES (9, 'Cookies Minicakes', 3, 10, 0, 1, 'san-pham/banh-sinh-nhat', 1, 4, 1513016412, 1719724357, 1, 1);
 INSERT INTO `tbl_menu` VALUES (10, 'Tin tức', 2, 13, 0, 1, 'cong-nghe', 1, 5, 1513303403, 1515585082, 1, 1);
-INSERT INTO `tbl_menu` VALUES (11, 'Phòng ngủ', 3, 10, 0, 1, 'san-pham/phong-ngu', 3, 1, 1513303781, 1719672818, 1, 1);
+INSERT INTO `tbl_menu` VALUES (11, 'Bánh sinh nhật', 3, 10, 0, 1, 'san-pham/banh-sinh-nhat', 3, 1, 1513303781, 1720503128, 1, 1);
 INSERT INTO `tbl_menu` VALUES (12, 'Giường ngủ', 3, 15, 11, 1, 'san-pham/giuong-ngu', 3, 2, 1513307289, 1719672833, 1, 1);
-INSERT INTO `tbl_menu` VALUES (15, 'Máy tính', 3, 12, 0, 1, 'san-pham/may-tinh', 3, 1, 1513550602, 1513758319, 1, 1);
-INSERT INTO `tbl_menu` VALUES (19, 'Tablet', 3, 15, 0, 1, 'san-pham/dien-thoai-oppo', 3, 1, 1515584687, 1515584687, 1, 1);
+INSERT INTO `tbl_menu` VALUES (15, 'Bánh mì', 3, 12, 0, 1, 'san-pham/banh-my-banh-man', 3, 1, 1513550602, 1720503290, 1, 1);
 INSERT INTO `tbl_menu` VALUES (20, 'Bánh sinh nhật', 3, 10, 0, 1, 'san-pham/phong-ngu', 1, 2, 1515584830, 1719724193, 1, 1);
 INSERT INTO `tbl_menu` VALUES (21, 'Trang chủ', 4, NULL, 0, 1, 'trang-chu.html', 1, 1, 1515584958, 1515585040, 1, 1);
 INSERT INTO `tbl_menu` VALUES (22, 'Bánh mỳ & Bánh mặn', 3, 12, 0, 1, 'san-pham/phong-khach', 1, 3, 1515585017, 1719724227, 1, 1);
-INSERT INTO `tbl_menu` VALUES (23, 'Tai nghe', 3, 10, 0, 1, 'san-pham/dien-thoai', 3, 1, 1515585611, 1515585611, 1, 1);
-INSERT INTO `tbl_menu` VALUES (24, 'Tin tức', 2, 13, 0, 1, 'tin-tuc/cong-nghe', 3, 1, 1515585645, 1515585645, 1, 1);
+INSERT INTO `tbl_menu` VALUES (23, 'Cookies', 3, 10, 0, 1, 'san-pham/banh-sinh-nhat', 3, 1, 1515585611, 1720503229, 1, 1);
 INSERT INTO `tbl_menu` VALUES (25, 'Tủ quần áo', 3, 11, 11, 1, 'san-pham/tu-quan-ao', 3, 1, 1515585696, 1719672857, 1, 1);
 INSERT INTO `tbl_menu` VALUES (26, 'Phòng ngủ', 3, 10, 0, 1, 'san-pham/phong-ngu', 4, 1, 1515627849, 1719672754, 1, 1);
 INSERT INTO `tbl_menu` VALUES (28, 'Giường ngủ', 3, 15, 26, 1, 'san-pham/giuong-ngu', 4, 1, 1515627981, 1719672772, 1, 1);
 INSERT INTO `tbl_menu` VALUES (29, 'Máy tính', 3, 12, 0, 1, 'san-pham/may-tinh', 4, 1, 1515628008, 1515628008, 1, 1);
 INSERT INTO `tbl_menu` VALUES (30, 'Tablet', 3, 12, 0, 1, 'san-pham/may-tinh', 4, 1, 1515628036, 1515628036, 1, 1);
 INSERT INTO `tbl_menu` VALUES (31, 'Tai nghe', 3, 12, 0, 1, 'san-pham/may-tinh', 4, 1, 1515628065, 1515628065, 1, 1);
-INSERT INTO `tbl_menu` VALUES (32, 'Điện thoại sam sung', 3, 10, 0, 2, 'san-pham/dien-thoai', 1, 1, 1520182017, 1520182017, 1, 1);
-INSERT INTO `tbl_menu` VALUES (33, 'Phòng khách', 3, 12, 0, 1, 'san-pham/phong-khach', 3, 3, 1719672952, 1719672952, 1, 1);
+INSERT INTO `tbl_menu` VALUES (33, 'Minicakes', 3, 12, 0, 1, 'san-pham/banh-my-banh-man', 3, 3, 1719672952, 1720503256, 1, 1);
+INSERT INTO `tbl_menu` VALUES (34, 'Bánh mặn', 1, 1, 0, 1, 'gioi-thieu.html', 3, 3, 1720503368, 1720503368, 1, 1);
 
 -- ----------------------------
 -- Table structure for tbl_order
@@ -317,7 +330,7 @@ CREATE TABLE `tbl_page`  (
   INDEX `create_by`(`create_by` ASC) USING BTREE,
   CONSTRAINT `tbl_page_ibfk_1` FOREIGN KEY (`modify_by`) REFERENCES `tbl_user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `tbl_page_ibfk_2` FOREIGN KEY (`create_by`) REFERENCES `tbl_user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_page
@@ -352,13 +365,13 @@ CREATE TABLE `tbl_post`  (
   CONSTRAINT `tbl_post_ibfk_2` FOREIGN KEY (`modify_by`) REFERENCES `tbl_user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `tbl_post_ibfk_3` FOREIGN KEY (`cat_id`) REFERENCES `tbl_category` (`cat_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `tbl_post_ibfk_4` FOREIGN KEY (`thumbnail`) REFERENCES `tbl_media` (`media_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_post
 -- ----------------------------
 INSERT INTO `tbl_post` VALUES (1, 'OPPO A83 rò rỉ thông số cấu hình sử dụng bảo mật khuôn mặt', '            Đầu th&aacute;ng 12 vừa qua, cơ quan TENAA đ&atilde; thừa nhận sự xuất hiện của OPPO A83 với thiết kế to&agrave;n m&agrave;n h&igrave;nh. Mới đ&acirc;y, nguồn tin r&ograve; rỉ lại cho ch&uacute;ng ta...\r\n        ', '<h2 dir=\"ltr\">Đầu th&aacute;ng 12 vừa qua, cơ quan&nbsp;<a href=\"https://www.thegioididong.com/tin-tuc/fcc-ccc-la-gi-vi-sao-smartphone-muon-ban-ra-phai-duoc-ho-chung-nhan--1024896\" target=\"_blank\" title=\"TENAA\" type=\"TENAA\">TENAA</a>&nbsp;đ&atilde; thừa nhận sự xuất hiện của&nbsp;<a href=\"https://www.thegioididong.com/tin-tuc/tim-kiem?key=OPPO+A83\" target=\"_blank\" title=\"OPPO A83 \" type=\"OPPO A83 \">OPPO A83</a>với thiết kế m&agrave;n h&igrave;nh tr&agrave;n viền. Mới đ&acirc;y, nguồn tin r&ograve; rỉ lại cho ch&uacute;ng ta biết th&ecirc;m cấu h&igrave;nh của m&aacute;y.</h2>\r\n\r\n<p><img alt=\"Thông tin rò rỉ về cấu hình của OPPO A83\" src=\"https://cdn4.tgdd.vn/Files/2017/12/13/1050119/oppo-a83-leak-2_600x459.jpg\" title=\"Thông tin rò rỉ về cấu hình của OPPO A83\" /></p>\r\n\r\n<p dir=\"ltr\">Theo đ&oacute;, OPPO A83 sẽ c&oacute; m&agrave;n h&igrave;nh 5.7 inch HD+ tỉ lệ 18:9 đang ng&agrave;y c&agrave;ng thịnh h&agrave;nh, trang bị bộ vi xử l&yacute; Helio P23 đi k&egrave;m 2 GB RAM + 16 GB ROM (hỗ trợ khe cắm thẻ nhớ microSD).</p>\r\n\r\n<p><img alt=\"Thông tin rò rỉ về cấu hình của OPPO A83\" src=\"https://cdn1.tgdd.vn/Files/2017/12/13/1050119/oppo-a83-leak-3_600x512.jpg\" title=\"Thông tin rò rỉ về cấu hình của OPPO A83\" /></p>\r\n\r\n<p dir=\"ltr\">Nh&igrave;n v&agrave;o những h&igrave;nh ảnh được cung cấp c&oacute; thể thấy rằng OPPO A83 kh&ocirc;ng được t&iacute;ch hợp cảm biến v&acirc;n tay. Thay v&agrave;o đ&oacute;, nhiều người tin rằng m&aacute;y sẽ sử dụng chức năng bảo mật nhận diện khu&ocirc;n mặt. Ngo&agrave;i ra, sản phẩm n&agrave;y c&ograve;n sở hữu camera trước sau 5/13 MP v&agrave; vi&ecirc;n pin dung lượng 3.180 mAh.</p>\r\n\r\n<p><img alt=\"Thông tin rò rỉ về cấu hình của OPPO A83\" src=\"https://cdn3.tgdd.vn/Files/2017/12/13/1050119/oppo-a83-leak-1_600x291.jpg\" title=\"Thông tin rò rỉ về cấu hình của OPPO A83\" /></p>\r\n\r\n<p>Th&ocirc;ng số cấu h&igrave;nh của tin đồn n&agrave;y ho&agrave;n to&agrave;n ph&ugrave; hợp với những th&ocirc;ng tin của cơ quan TENAA cung cấp từ trước đ&oacute;. Chưa hết, trang&nbsp;<a href=\"http://playfuldroid.com/oppo-a83-specs-surface-may-arrive-with-facial-recognition-instead-of-fingerprint-scanner/\" rel=\"nofollow\" target=\"_blank\" title=\"playfuldroid \" type=\"playfuldroid \">playfuldroid</a>&nbsp;c&ograve;n cho biết th&ecirc;m, OPPO A83 c&oacute; k&iacute;ch thước 150.5 x73.1 x 7.7 mm, xuất hiện với t&ugrave;y chọn m&agrave;u v&agrave;ng v&agrave; đen cho người d&ugrave;ng chọn lựa.</p>\r\n\r\n<p dir=\"ltr\">Dự kiến, OPPO sẽ c&ocirc;ng bố OPPO A83 v&agrave;o ng&agrave;y 30/12 tới với gi&aacute; b&aacute;n khoảng 1.199 NDT (gần 4.1 triệu đồng).</p>\r\n', 265, 14, 'oppo-a83-ro-ri-thong-so-cau-hinh-su-dung-bao-mat-k', 1, 31, 1513183556, 1, 1513953229, 1);
-INSERT INTO `tbl_post` VALUES (2, 'Điện thoại cơ bản hỗ trợ 4G của Nokia vừa đạt chứng nhận Bluetooth', 'Một v&agrave;i th&ocirc;ng tin gần nhất cho thấy, HMD sắp ra mắt một điện thoại &quot;cục gạch&quot; hỗ trợ 4G. V&agrave; mới nhất, c&aacute;c model TA-1047, TA-1060 đ&atilde; đạt chứng nhận tại&nbsp;FCC. Dự kiến đ&acirc;y ch&iacute;nh l&agrave; những điện thoại cơ bản hỗ trợ 4G tuy kh&ocirc;ng phải l&agrave; smartphone.', '<h2>Một v&agrave;i th&ocirc;ng tin gần nhất cho thấy, HMD sắp ra mắt một điện thoại &quot;cục gạch&quot; hỗ trợ 4G. V&agrave; mới nhất, c&aacute;c model TA-1047, TA-1060 đ&atilde; đạt chứng nhận tại&nbsp;<a href=\"https://www.thegioididong.com/tin-tuc/fcc-ccc-la-gi-vi-sao-smartphone-muon-ban-ra-phai-duoc-ho-chung-nhan--1024896\" target=\"_blank\" title=\"FCC\">FCC</a>. Dự kiến đ&acirc;y ch&iacute;nh l&agrave; những điện thoại cơ bản hỗ trợ 4G tuy kh&ocirc;ng phải l&agrave; smartphone.</h2>\r\n\r\n<p>Theo&nbsp;<a href=\"https://www.gizmochina.com/2017/12/21/4g-nokia-feature-phone-receives-bluetooth-sig-certification-launch-nearing/\" rel=\"nofollow\" target=\"_blank\" title=\"Nokia\">gizmochina</a>, mẫu điện thoại cơ bản hỗ trợ 4G của&nbsp;<a href=\"https://www.thegioididong.com/dtdd-nokia\" target=\"_blank\" title=\"Nokia \">Nokia</a>&nbsp;cũng vừa đạt chứng nhận tại tổ chức Bluetooth SIG, điều n&agrave;y chứng tỏ m&aacute;y đ&atilde; sẵn s&agrave;ng ra mắt.</p>\r\n\r\n<p>Bluetooth SIG đ&atilde; chứng nhận 5 model gồm: Nokia TA-1047, TA-1060, TA-1056, TA-1079 v&agrave; TA-1066. Dường như đ&acirc;y l&agrave; 5 biến thể của mẫu điện thoại nghe gọi sắp ra mắt.</p>\r\n\r\n<p><img alt=\"Điện thoại cục gạch Nokia hỗ trợ 4G đạt chứng nhận Bluetooth\" src=\"https://cdn.tgdd.vn/Files/2017/12/21/1052290/nokia-2_800x300.jpg\" title=\"Điện thoại cục gạch Nokia hỗ trợ 4G đạt chứng nhận Bluetooth\" /></p>\r\n\r\n<p>Dự kiến chiếc điện thoại mới n&agrave;y sẽ l&ecirc;n kệ ở nhiều thị trường kh&aacute;c nhau với 2 phi&ecirc;n bản l&agrave; 1 SIM v&agrave; 2 SIM. Ngo&agrave;i ra, phần m&ocirc; tả phần mềm cho thấy m&aacute;y kh&ocirc;ng chạy Android, rất c&oacute; thể sẽ t&iacute;ch hợp hệ điều h&agrave;nh series 30+ Feature OS tương tự như&nbsp;<a href=\"https://www.thegioididong.com/dtdd/nokia-3310-2017\" target=\"_blank\" title=\"Nokia 3310\">Nokia 3310</a>&nbsp;(2017).</p>\r\n\r\n<p>Danh s&aacute;ch tr&ecirc;n FCC cho thấy m&aacute;y c&oacute; k&iacute;ch thước l&agrave; 133 x 68 mm. N&oacute; được suy đo&aacute;n sẽ sử dụng b&agrave;n ph&iacute;m QWERTY giống với Nokia E72.</p>\r\n', 314, 14, 'dien-thoai-co-ban-ho-tro-4g-cua-nokia-vua-dat-chung-nhan-bluetooth', 2, 24, 1513960290, 5, 1513960503, 5);
+INSERT INTO `tbl_post` VALUES (2, 'Điện thoại cơ bản hỗ trợ 4G của Nokia vừa đạt chứng nhận Bluetooth', 'Một v&agrave;i th&ocirc;ng tin gần nhất cho thấy, HMD sắp ra mắt một điện thoại &quot;cục gạch&quot; hỗ trợ 4G. V&agrave; mới nhất, c&aacute;c model TA-1047, TA-1060 đ&atilde; đạt chứng nhận tại&nbsp;FCC. Dự kiến đ&acirc;y ch&iacute;nh l&agrave; những điện thoại cơ bản hỗ trợ 4G tuy kh&ocirc;ng phải l&agrave; smartphone.', '<h2>Một v&agrave;i th&ocirc;ng tin gần nhất cho thấy, HMD sắp ra mắt một điện thoại &quot;cục gạch&quot; hỗ trợ 4G. V&agrave; mới nhất, c&aacute;c model TA-1047, TA-1060 đ&atilde; đạt chứng nhận tại&nbsp;<a href=\"https://www.thegioididong.com/tin-tuc/fcc-ccc-la-gi-vi-sao-smartphone-muon-ban-ra-phai-duoc-ho-chung-nhan--1024896\" target=\"_blank\" title=\"FCC\">FCC</a>. Dự kiến đ&acirc;y ch&iacute;nh l&agrave; những điện thoại cơ bản hỗ trợ 4G tuy kh&ocirc;ng phải l&agrave; smartphone.</h2>\r\n\r\n<p>Theo&nbsp;<a href=\"https://www.gizmochina.com/2017/12/21/4g-nokia-feature-phone-receives-bluetooth-sig-certification-launch-nearing/\" rel=\"nofollow\" target=\"_blank\" title=\"Nokia\">gizmochina</a>, mẫu điện thoại cơ bản hỗ trợ 4G của&nbsp;<a href=\"https://www.thegioididong.com/dtdd-nokia\" target=\"_blank\" title=\"Nokia \">Nokia</a>&nbsp;cũng vừa đạt chứng nhận tại tổ chức Bluetooth SIG, điều n&agrave;y chứng tỏ m&aacute;y đ&atilde; sẵn s&agrave;ng ra mắt.</p>\r\n\r\n<p>Bluetooth SIG đ&atilde; chứng nhận 5 model gồm: Nokia TA-1047, TA-1060, TA-1056, TA-1079 v&agrave; TA-1066. Dường như đ&acirc;y l&agrave; 5 biến thể của mẫu điện thoại nghe gọi sắp ra mắt.</p>\r\n\r\n<p><img alt=\"Điện thoại cục gạch Nokia hỗ trợ 4G đạt chứng nhận Bluetooth\" src=\"https://cdn.tgdd.vn/Files/2017/12/21/1052290/nokia-2_800x300.jpg\" title=\"Điện thoại cục gạch Nokia hỗ trợ 4G đạt chứng nhận Bluetooth\" /></p>\r\n\r\n<p>Dự kiến chiếc điện thoại mới n&agrave;y sẽ l&ecirc;n kệ ở nhiều thị trường kh&aacute;c nhau với 2 phi&ecirc;n bản l&agrave; 1 SIM v&agrave; 2 SIM. Ngo&agrave;i ra, phần m&ocirc; tả phần mềm cho thấy m&aacute;y kh&ocirc;ng chạy Android, rất c&oacute; thể sẽ t&iacute;ch hợp hệ điều h&agrave;nh series 30+ Feature OS tương tự như&nbsp;<a href=\"https://www.thegioididong.com/dtdd/nokia-3310-2017\" target=\"_blank\" title=\"Nokia 3310\">Nokia 3310</a>&nbsp;(2017).</p>\r\n\r\n<p>Danh s&aacute;ch tr&ecirc;n FCC cho thấy m&aacute;y c&oacute; k&iacute;ch thước l&agrave; 133 x 68 mm. N&oacute; được suy đo&aacute;n sẽ sử dụng b&agrave;n ph&iacute;m QWERTY giống với Nokia E72.</p>\r\n', 314, 14, 'dien-thoai-co-ban-ho-tro-4g-cua-nokia-vua-dat-chung-nhan-bluetooth', 2, 25, 1513960290, 5, 1513960503, 5);
 
 -- ----------------------------
 -- Table structure for tbl_product
@@ -391,7 +404,7 @@ CREATE TABLE `tbl_product`  (
   CONSTRAINT `tbl_product_ibfk_1` FOREIGN KEY (`modify_by`) REFERENCES `tbl_user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `tbl_product_ibfk_2` FOREIGN KEY (`create_by`) REFERENCES `tbl_user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `tbl_product_ibfk_3` FOREIGN KEY (`thumb`) REFERENCES `tbl_media` (`media_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_product
@@ -417,7 +430,7 @@ CREATE TABLE `tbl_slider`  (
   INDEX `create_by`(`create_by` ASC) USING BTREE,
   INDEX `modify_by`(`modify_by` ASC) USING BTREE,
   CONSTRAINT `tbl_slider_ibfk_1` FOREIGN KEY (`thumb`) REFERENCES `tbl_media` (`media_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_slider
@@ -443,7 +456,7 @@ CREATE TABLE `tbl_support`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `thumb`(`thumb` ASC) USING BTREE,
   INDEX `page_connect`(`page_connect` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_support
@@ -467,7 +480,7 @@ CREATE TABLE `tbl_sytem`  (
   `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `per_page` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_sytem
@@ -497,7 +510,7 @@ CREATE TABLE `tbl_user`  (
   UNIQUE INDEX `email`(`email` ASC) USING BTREE,
   INDEX `avatar`(`avatar` ASC) USING BTREE,
   CONSTRAINT `tbl_user_ibfk_1` FOREIGN KEY (`avatar`) REFERENCES `tbl_media` (`media_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_vietnamese_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_user

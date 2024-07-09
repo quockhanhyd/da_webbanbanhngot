@@ -24,7 +24,7 @@
 .change-pass-page #detail-page .section-detail button:hover{ background: #3a7d19;}
 
 #wp-form{
-    background-image: url('../../images/background-form.png');
+    background-image: url('https://theme.hstatic.net/1000313040/1000406925/14/banform.jpg?v=2102');
     background-size: 100% 100% ;
     position: relative;
     height: 100% ;
@@ -39,7 +39,7 @@
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
     margin:auto;
-    background: #ffffff42;
+    background: #ffffff4d;
 }
 
 #wp-form form{
